@@ -37,10 +37,7 @@ jobs:
       - name: kustomize edit
         if: ${{ github.event.inputs.image }}
         run: |
-          wget https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.5.7/kustomize_v4.5.7_linux_arm64.tar.gz
-          tar -zxvf kustomize_v4.5.7_linux_arm64.tar.gz
-          sudo cp kustomize /usr/local/bin/
-          sudo chmod a+x /usr/local/bin/kustomize
+          curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
           kustomize edit set image ${{ github.event.inputs.image }}:${{ github.event.inputs.sha-tag }}
           rm -f kustomize
       
