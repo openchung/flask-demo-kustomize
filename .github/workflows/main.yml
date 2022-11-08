@@ -39,8 +39,8 @@ jobs:
         run: |
           wget https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.5.7/kustomize_v4.5.7_linux_arm64.tar.gz
           tar -zxvf kustomize_v4.5.7_linux_arm64.tar.gz
-          cp kustomize /usr/local/bin/
-          chmod a+x /usr/local/bin/kustomize
+          sudo cp kustomize /usr/local/bin/
+          sudo chmod a+x /usr/local/bin/kustomize
           kustomize edit set image ${{ github.event.inputs.image }}:${{ github.event.inputs.sha-tag }}
           rm -f kustomize
       
