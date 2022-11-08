@@ -38,7 +38,7 @@ jobs:
         if: ${{ github.event.inputs.image }}
         run: |
           curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
-          kustomize edit set image ${{ github.event.inputs.image }}:${{ github.event.inputs.sha-tag }} --path /home/runner/work/flask-demo-kustomize/flask-demo-kustomize/sealed/kustomization.yaml
+          kustomize edit set image ${{ github.event.inputs.image }}:${{ github.event.inputs.sha-tag }} -f /home/runner/work/flask-demo-kustomize/flask-demo-kustomize/sealed/kustomization.yaml
           rm -f kustomize
       
       - name: Git Commit/Push Changes
