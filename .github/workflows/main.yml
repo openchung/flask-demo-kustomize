@@ -44,7 +44,6 @@ jobs:
           
       - name: safe git
         if: ${{ github.event.inputs.image }}
-        working-directory: $GITHUB_WORKSPACE
         run: |
           git config --global --add safe.directory /github/workspace
       
