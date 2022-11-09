@@ -7,4 +7,4 @@ resources:
 - secret-sealed.yaml
 images:
 - name: dannielchung/flask-demo
-  newTag: 4e3c18c73f15a59d7ad924682949ca3143025ab7
+  newTag: 5a63e9e8ce609f9564376a1d1f3edd674a159d1f
