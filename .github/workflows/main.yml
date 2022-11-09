@@ -48,10 +48,12 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git config --global --add safe.directory '*'
+          
       
       - name: Commit files
         run: |
           pwd
+          git add --all
           git commit -m "kustomize set image to ${{ github.event.inputs.image }}:${{ github.event.inputs.sha-tag }}"
 
       
