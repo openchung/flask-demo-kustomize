@@ -56,5 +56,11 @@ jobs:
           git add --all
           git commit -m "kustomize set image to ${{ github.event.inputs.image }}:${{ github.event.inputs.sha-tag }}"
 
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.PASSWORD }}
+          branch: 'gh-pages'
+          force: true
       
       
