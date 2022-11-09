@@ -45,6 +45,8 @@ jobs:
       - name: safe git
         if: ${{ github.event.inputs.image }}
         run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git config --global --add safe.directory '*'
       
       - name: Commit files
