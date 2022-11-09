@@ -45,7 +45,7 @@ jobs:
       - name: safe git
         if: ${{ github.event.inputs.image }}
         run: |
-          git config --global --add safe.directory /home/runner/work/flask-demo-kustomize/flask-demo-kustomize
+          git config --global --add safe.directory '*'
       
       - name: Git Commit/Push Changes
         uses: actions-x/commit@v2
